@@ -26,7 +26,6 @@ const signup = dispatch => async ({ email, password }) => {
     const response = await tracker.post("/signup", { email, password });
     await AsyncStorage.setItem('token', response.data.token);
     dispatch({ type: 'signup', payload: response.data.token });
-
     navigate('TrackList')
   } catch (err) {
     dispatch({
