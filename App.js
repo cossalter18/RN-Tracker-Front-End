@@ -5,9 +5,8 @@ import { createBottomTabNavigator } from "react-navigation-tabs";
 import AccountScreen from "./src/screens/AccountScreen";
 import SigninScreen from "./src/screens/SigninScreen";
 import SignupScreen from "./src/screens/SignupScreen";
-import TrackCreate from "./src/screens/TrackCreate";
-import TrackDetailScreen from "./src/screens/TrackDetailScreen";
-import TrackList from "./src/screens/TrackList";
+import PostDetailScreen from "./src/screens/PostDetailScreen";
+import HomeScreen from "./src/screens/HomeScreen";
 import { Provider as AuthProvider } from "./src/context/AuthContext";
 import { setNavigator } from "./src/navigationRef";
 
@@ -17,11 +16,8 @@ const switchNavigator = createSwitchNavigator({
     Signin: SigninScreen,
   }),
   mainFlow: createBottomTabNavigator({
-    trackListFlow: createStackNavigator({
-      TrackList: TrackList,
-      TrackDetail: TrackDetailScreen,
-    }),
-    TrackCreate: TrackCreate,
+    HomeScreen: HomeScreen,
+    Post: PostDetailScreen,
     Account: AccountScreen,
   }),
 });

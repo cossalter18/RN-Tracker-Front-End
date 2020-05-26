@@ -23,7 +23,7 @@ const signup = (dispatch) => async ({ email, password }) => {
     const response = await tracker.post("/signup", { email, password });
     await AsyncStorage.setItem("token", response.data.token);
     dispatch({ type: "signin", payload: response.data.token });
-    navigate("TrackList");
+    navigate("HomeScreen");
   } catch (err) {
     dispatch({
       type: "add_error",
@@ -40,7 +40,7 @@ const signin = (dispatch) => async ({ email, password }) => {
     const response = await tracker.post("/signin", { email, password });
     await AsyncStorage.setItem("token", response.data.token);
     dispatch ({type: 'signin', payload: response.data.token})
-    navigate('TrackList')
+    navigate('HomeScreen')
   } catch (err) {
     dispatch({
       type: "add_error",
